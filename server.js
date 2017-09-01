@@ -10,35 +10,6 @@ var socketCodes = {};
 app.use(express.static(__dirname + '/public'));
 
 
-app.get('/hello', function(req, res){
-  //res.send(dt.myDateTime());
-  console.log("I received a GET request");
-
-  person3 ={
-  	name: "loolol",
-  	email: "lol@gmail.com",
-  	number: "3333"
-  };
-
-  var contactlist = [person3];
-  res.json(contactlist);
-
-});
-
-app.get('/hello2', function(req, res){
-  //res.send(dt.myDateTime());
-  console.log("I received a GET request2");
-
-  person1 ={
-  	name: "asdfasdf",
-  	email: "lol@gmail.com",
-  	number: "3333"
-  };
-
-  var contactlist2 = [person1];
-  res.json(contactlist2);
-
-});
 
 io.on('connection', function(socket){
   console.log('a user connected');
@@ -52,7 +23,7 @@ io.on('connection', function(socket){
       socket.code = code;
       console.log({code: code});
       //Show code on PC
-      //socket.emit('showmecode',{code: code});
+      socket.emit('roomcreated',code);
     }
 
   });

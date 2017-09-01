@@ -2,21 +2,16 @@
   <head><title>Please Work MultiScreen</title></head>
         <h1>Hello</h1>
   <body>
-    <div ng-hide ng-app="myApp" ng-controller="angctrl">
-    </div>
-    <div ng-hide ng-app="app" ng-controller="pcctrl">
-    </div>
-    <div ng-hide ng-app="app3" ng-controller="pcctrl3">
+    <div ng-hide ng-app="myApp" ng-controller="myCtrl">
+      <p>{{cryptcode}}</p>
     </div>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
       <script src="controllers/app.js"></script>
-      <script src="controllers/app2.js"></script>
-      <script src="controllers/pccontrol.js"></script>
       <script src="controllers/mobile-check.js"></script>
       <script src="/socket.io/socket.io.js"></script>
       <script>
-        var socket = io.connect();
-        socket.emit('devicet', window.deviceType);
+        //var socket = io.connect();
+        //socket.emit('devicet', window.deviceType);
       </script>
   </body>
 </html>
